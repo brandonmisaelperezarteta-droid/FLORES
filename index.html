@@ -15,18 +15,9 @@
     overflow-x: hidden;
   }
 
-  /* ================= CORAZONES FLOTANTES ================= */
-  #corazones {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 1;
-  }
+  #corazones { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
   .corazon {
-    position: absolute;
-    bottom: -60px;
-    opacity: 0;
+    position: absolute; bottom: -60px; opacity: 0;
     animation: subir linear forwards;
     filter: drop-shadow(0 0 6px rgba(255, 90, 150, .7));
   }
@@ -37,53 +28,26 @@
     100% { transform: translateY(-110vh) rotate(340deg) scale(1); opacity: 0; }
   }
 
-  /* ================= BOTÓN DE MÚSICA ================= */
   #btnMusica {
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    z-index: 20;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+    position: fixed; top: 18px; right: 18px; z-index: 20;
+    width: 48px; height: 48px; border-radius: 50%;
     border: 1px solid rgba(255,190,215,.5);
     background: rgba(255, 92, 138, .25);
-    backdrop-filter: blur(6px);
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform .2s ease, background .2s ease;
+    backdrop-filter: blur(6px); color: #fff; font-size: 1.2rem;
+    cursor: pointer; transition: transform .2s ease, background .2s ease;
   }
-  #btnMusica:hover {
-    transform: scale(1.1);
-    background: rgba(255, 92, 138, .5);
-  }
+  #btnMusica:hover { transform: scale(1.1); background: rgba(255, 92, 138, .5); }
 
-  /* ================= PANTALLAS ================= */
   #intro {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px;
+    position: fixed; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
     transition: opacity .9s ease, transform .9s ease;
   }
-  #intro.oculto {
-    opacity: 0;
-    transform: scale(1.25);
-    pointer-events: none;
-  }
-
+  #intro.oculto { opacity: 0; transform: scale(1.25); pointer-events: none; }
   #intro h1 {
-    font-size: clamp(1.3rem, 4vw, 2.3rem);
-    font-weight: normal;
-    color: #ffc9dd;
-    letter-spacing: .5px;
-    margin-bottom: 42px;
+    font-size: clamp(1.3rem, 4vw, 2.3rem); font-weight: normal;
+    color: #ffc9dd; letter-spacing: .5px; margin-bottom: 42px;
     text-shadow: 0 0 26px rgba(255, 80, 140, .65);
     animation: aparecerIntro 1.4s ease-out both;
   }
@@ -91,72 +55,45 @@
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: none; }
   }
-
   #btnComenzar {
-    font-family: inherit;
-    font-size: 1.1rem;
-    padding: 17px 42px;
-    border-radius: 60px;
-    border: 1px solid rgba(255, 190, 215, .55);
+    font-family: inherit; font-size: 1.1rem; padding: 17px 42px;
+    border-radius: 60px; border: 1px solid rgba(255, 190, 215, .55);
     background: linear-gradient(135deg, #ff5c8a 0%, #c1143f 100%);
-    color: #fff;
-    cursor: pointer;
-    letter-spacing: .5px;
-    animation: latido 1.9s ease-in-out infinite;
-    transition: transform .25s ease;
+    color: #fff; cursor: pointer; letter-spacing: .5px;
+    animation: latido 1.9s ease-in-out infinite; transition: transform .25s ease;
   }
   #btnComenzar:hover { transform: scale(1.08); }
   #btnComenzar:active { transform: scale(.97); }
-
   @keyframes latido {
     0%, 100% { box-shadow: 0 0 22px rgba(255, 60, 120, .45); transform: scale(1); }
     50%      { box-shadow: 0 0 52px rgba(255, 60, 120, .9);  transform: scale(1.05); }
   }
 
-  /* ================= ESCENA PRINCIPAL ================= */
   #principal {
-    position: relative;
-    z-index: 2;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1.1s ease .25s;
+    position: relative; z-index: 2; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 1.1s ease .25s;
   }
   #principal.activa { opacity: 1; }
 
   .escena {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1120px;
-    width: 100%;
-    padding: 48px 28px;
+    display: flex; align-items: center; gap: 50px;
+    max-width: 1150px; width: 100%; padding: 48px 28px;
   }
 
-  /* ---------- LA ROSA ---------- */
   .rosa {
-    width: 310px;
-    flex-shrink: 0;
-    filter: drop-shadow(0 12px 34px rgba(255, 50, 110, .35));
+    width: 380px; max-width: 84vw; flex-shrink: 0;
+    filter: drop-shadow(0 18px 30px rgba(180, 0, 50, .55));
   }
 
-  .tallo {
-    stroke-dasharray: 520;
-    stroke-dashoffset: 520;
-  }
-  .florecer .tallo {
-    animation: crecerTallo 1.3s ease-out .1s forwards;
-  }
+  .tallo { stroke-dasharray: 520; stroke-dashoffset: 520; }
+  .florecer .tallo { animation: crecerTallo 1.3s ease-out .1s forwards; }
   @keyframes crecerTallo { to { stroke-dashoffset: 0; } }
 
   .hoja { opacity: 0; transform-box: fill-box; }
   .h1 { transform-origin: 100% 50%; }
   .h2 { transform-origin: 0% 50%; }
-  .florecer .hoja {
-    animation: salirHoja .9s cubic-bezier(.2, .8, .3, 1.3) forwards;
-  }
+  .florecer .hoja { animation: salirHoja .9s cubic-bezier(.2, .8, .3, 1.3) forwards; }
   .florecer .h1 { animation-delay: .55s; }
   .florecer .h2 { animation-delay: .8s; }
   @keyframes salirHoja {
@@ -168,63 +105,40 @@
     transform-box: fill-box;
     transform-origin: 50% 100%;
     transform: scale(0);
+    opacity: 0;
   }
   .florecer .petalo {
-    animation: brotar .95s cubic-bezier(.2, .8, .3, 1.35) forwards;
+    animation: brotar 1s cubic-bezier(.2, .8, .3, 1.3) forwards;
   }
   @keyframes brotar {
-    0%   { transform: scale(0) rotate(-22deg); opacity: 0; }
+    0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
     55%  { opacity: 1; }
     100% { transform: scale(1) rotate(0deg); opacity: 1; }
   }
 
-  .nucleo {
-    transform-box: fill-box;
-    transform-origin: 50% 50%;
-    transform: scale(0);
-  }
-  .florecer .nucleo {
-    animation: brotar .8s cubic-bezier(.2, .8, .3, 1.4) 1s forwards;
-  }
-
   .florecer .flor {
-    animation: mecer 5.5s ease-in-out 1.8s infinite;
+    animation: mecer 6s ease-in-out 2.4s infinite;
   }
-  .flor {
-    transform-box: fill-box;
-    transform-origin: 50% 100%;
-  }
+  .flor { transform-box: fill-box; transform-origin: 50% 100%; }
   @keyframes mecer {
-    0%, 100% { transform: rotate(-2.5deg); }
-    50%      { transform: rotate(2.5deg); }
+    0%, 100% { transform: rotate(-2deg); }
+    50%      { transform: rotate(2deg); }
   }
 
-  /* ---------- TEXTO ---------- */
   .texto { max-width: 580px; }
-
   .texto h2 {
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
-    font-weight: normal;
-    color: #ffb8d0;
-    margin-bottom: 22px;
-    letter-spacing: .5px;
+    font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: normal;
+    color: #ffb8d0; margin-bottom: 22px; letter-spacing: .5px;
     text-shadow: 0 0 22px rgba(255, 80, 140, .5);
   }
-
   .texto p {
-    font-size: 1.03rem;
-    line-height: 1.9;
-    color: #f6dde8;
-    margin-bottom: 16px;
+    font-size: 1.03rem; line-height: 1.9;
+    color: #f6dde8; margin-bottom: 16px;
   }
-
   .firma {
-    margin-top: 26px;
-    font-style: italic;
-    color: #ff9dc0 !important;
-    letter-spacing: .5px;
+    margin-top: 26px; font-style: italic;
+    color: #ff9dc0 !important; letter-spacing: .5px;
   }
-
   .aparece { opacity: 0; }
   #principal.activa .aparece {
     animation: subirTexto 1s ease-out forwards;
@@ -235,122 +149,211 @@
     to   { opacity: 1; transform: none; }
   }
 
-  /* ---------- CELULAR ---------- */
-  @media (max-width: 880px) {
+  @media (max-width: 900px) {
     .escena {
-      flex-direction: column;
-      gap: 20px;
-      padding: 40px 22px 60px;
-      text-align: center;
+      flex-direction: column; gap: 10px;
+      padding: 40px 22px 60px; text-align: center;
     }
-    .rosa { width: 210px; }
+    .rosa { width: 280px; }
     .texto { max-width: 100%; }
   }
 </style>
 </head>
 <body>
 
-  <!-- Corazones que flotan de fondo -->
   <div id="corazones"></div>
 
-  <!-- Música -->
   <audio id="musica" loop preload="auto">
     <source src="musica/florecita.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Botón para silenciar/activar música -->
   <button id="btnMusica" title="Silenciar/Activar">🔊</button>
 
-  <!-- ================= PANTALLA 1: INTRO ================= -->
   <section id="intro">
-    <h1>Hay algo que quiero decirte... 💗</h1>
+    <h1>Hay algo que quiero decirte mi Sol 💗</h1>
     <button id="btnComenzar">Haz clic aquí 🌹</button>
   </section>
 
-  <!-- ================= PANTALLA 2: LA ROSA Y EL MENSAJE ================= -->
   <section id="principal">
     <div class="escena">
 
-      <!-- La rosa animada -->
-      <svg class="rosa" viewBox="0 0 260 380" xmlns="http://www.w3.org/2000/svg">
+      <svg class="rosa" viewBox="0 0 400 580" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="gTallo" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#4caf50"/>
-            <stop offset="100%" stop-color="#14501c"/>
+          <linearGradient id="gTallo" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1e4a18"/>
+            <stop offset="45%" stop-color="#4a8c3f"/>
+            <stop offset="100%" stop-color="#0f3010"/>
           </linearGradient>
 
-          <radialGradient id="gPet1" cx="50%" cy="100%" r="100%">
-            <stop offset="0%" stop-color="#6d0c24"/>
-            <stop offset="100%" stop-color="#c0204a"/>
+          <linearGradient id="gHoja" x1="0" y1="0" x2="0.6" y2="1">
+            <stop offset="0%" stop-color="#6ab054"/>
+            <stop offset="45%" stop-color="#3a7830"/>
+            <stop offset="100%" stop-color="#0f2f10"/>
+          </linearGradient>
+
+          <radialGradient id="gP1" cx="50%" cy="100%" r="100%">
+            <stop offset="0%" stop-color="#1a0005"/>
+            <stop offset="30%" stop-color="#4a0418"/>
+            <stop offset="60%" stop-color="#82102c"/>
+            <stop offset="100%" stop-color="#b81c40"/>
           </radialGradient>
 
-          <radialGradient id="gPet2" cx="50%" cy="100%" r="100%">
-            <stop offset="0%" stop-color="#8e1230"/>
-            <stop offset="100%" stop-color="#e0356a"/>
+          <radialGradient id="gP2" cx="50%" cy="100%" r="100%">
+            <stop offset="0%" stop-color="#2a020a"/>
+            <stop offset="30%" stop-color="#6a0a20"/>
+            <stop offset="65%" stop-color="#a81536"/>
+            <stop offset="100%" stop-color="#e0244c"/>
           </radialGradient>
 
-          <radialGradient id="gPet3" cx="50%" cy="100%" r="100%">
-            <stop offset="0%" stop-color="#b8184a"/>
-            <stop offset="100%" stop-color="#ff7aa8"/>
+          <radialGradient id="gP3" cx="50%" cy="100%" r="100%">
+            <stop offset="0%" stop-color="#3a0410"/>
+            <stop offset="32%" stop-color="#82102c"/>
+            <stop offset="68%" stop-color="#c41846"/>
+            <stop offset="100%" stop-color="#f52a5c"/>
           </radialGradient>
+
+          <radialGradient id="gP4" cx="50%" cy="100%" r="100%">
+            <stop offset="0%" stop-color="#4a0515"/>
+            <stop offset="35%" stop-color="#96143a"/>
+            <stop offset="70%" stop-color="#dc2054"/>
+            <stop offset="100%" stop-color="#ff6a8c"/>
+          </radialGradient>
+
+          <radialGradient id="gP5" cx="50%" cy="100%" r="100%">
+            <stop offset="0%" stop-color="#5c0620"/>
+            <stop offset="35%" stop-color="#b01c46"/>
+            <stop offset="70%" stop-color="#ef2e5e"/>
+            <stop offset="100%" stop-color="#ff9cb4"/>
+          </radialGradient>
+
+          <radialGradient id="gCore" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#ffd8e2"/>
+            <stop offset="25%" stop-color="#ff6c92"/>
+            <stop offset="60%" stop-color="#c82048"/>
+            <stop offset="100%" stop-color="#2a0210"/>
+          </radialGradient>
+
+          <g id="petal">
+            <path d="M0,0 C-55,-25 -80,-80 -68,-120 C-62,-138 -45,-150 -22,-148 C-8,-147 0,-142 0,-135 C0,-142 8,-147 22,-148 C45,-150 62,-138 68,-120 C80,-80 55,-25 0,0 Z"/>
+            <ellipse cx="0" cy="-12" rx="30" ry="11" fill="rgba(15,0,5,0.38)"/>
+            <path d="M0,-8 L0,-128" stroke="rgba(25,0,8,0.28)" stroke-width="1.5" fill="none"/>
+            <path d="M-8,-30 Q-24,-55 -32,-82" stroke="rgba(25,0,8,0.16)" stroke-width="1" fill="none"/>
+            <path d="M8,-30 Q24,-55 32,-82" stroke="rgba(25,0,8,0.16)" stroke-width="1" fill="none"/>
+            <path d="M-30,-70 Q-42,-92 -46,-108" stroke="rgba(25,0,8,0.12)" stroke-width="0.8" fill="none"/>
+            <path d="M30,-70 Q42,-92 46,-108" stroke="rgba(25,0,8,0.12)" stroke-width="0.8" fill="none"/>
+            <path d="M-22,-118 Q0,-142 22,-118 Q0,-128 -22,-118 Z" fill="rgba(255,220,235,0.3)"/>
+            <ellipse cx="-16" cy="-60" rx="6" ry="3" fill="rgba(255,200,220,0.22)" transform="rotate(-25 -16 -60)"/>
+          </g>
         </defs>
 
-        <!-- Tallo -->
-        <path class="tallo"
-              d="M128 158 C 116 220, 144 292, 122 372"
-              fill="none" stroke="url(#gTallo)"
-              stroke-width="7" stroke-linecap="round"/>
+        <path class="tallo" d="M200 260 C 178 350, 222 440, 190 540"
+              fill="none" stroke="url(#gTallo)" stroke-width="10" stroke-linecap="round"/>
 
-        <!-- Hojas -->
-        <path class="hoja h1"
-              d="M126 236 C 84 214, 52 240, 62 274 C 96 278, 118 264, 126 236 Z"
-              fill="url(#gTallo)"/>
-        <path class="hoja h2"
-              d="M133 302 C 176 282, 208 306, 198 340 C 164 344, 141 330, 133 302 Z"
-              fill="url(#gTallo)"/>
+        <path d="M183 320 L 165 312 L 185 334 Z" fill="#2e5a2a"/>
+        <path d="M217 405 L 234 400 L 218 418 Z" fill="#2e5a2a"/>
+        <path d="M197 470 L 180 465 L 199 482 Z" fill="#2e5a2a"/>
 
-        <!-- Flor -->
-        <g transform="translate(130,150)">
+        <path class="hoja h1" d="M198 360 C 128 320, 68 360, 86 412 C 142 422, 180 398, 198 360 Z" fill="url(#gHoja)"/>
+        <path class="hoja h2" d="M206 450 C 276 410, 336 450, 318 502 C 262 512, 224 488, 206 450 Z" fill="url(#gHoja)"/>
+
+        <path d="M150 380 L 92 398 M 150 380 L 128 362 M 150 380 L 156 408" stroke="#1a4a18" stroke-width="1.1" fill="none" opacity="0.6"/>
+        <path d="M255 472 L 312 490 M 255 472 L 278 455 M 255 472 L 250 500" stroke="#1a4a18" stroke-width="1.1" fill="none" opacity="0.6"/>
+
+        <g transform="translate(200, 200)">
           <g class="flor">
 
-            <!-- Capa exterior -->
-            <g fill="url(#gPet1)">
-              <g transform="rotate(0)"><path class="petalo" style="animation-delay:.00s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(60)"><path class="petalo" style="animation-delay:.06s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(120)"><path class="petalo" style="animation-delay:.12s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(180)"><path class="petalo" style="animation-delay:.18s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(240)"><path class="petalo" style="animation-delay:.24s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(300)"><path class="petalo" style="animation-delay:.30s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
+            <!-- Capa 1: 7 pétalos exteriores -->
+            <g fill="url(#gP1)">
+              <g transform="rotate(0) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.00s"/></g>
+              <g transform="rotate(51) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.03s"/></g>
+              <g transform="rotate(103) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.06s"/></g>
+              <g transform="rotate(154) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.09s"/></g>
+              <g transform="rotate(206) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.12s"/></g>
+              <g transform="rotate(257) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.15s"/></g>
+              <g transform="rotate(309) scale(1.6,1.45)"><use href="#petal" class="petalo" style="animation-delay:0.18s"/></g>
             </g>
 
-            <!-- Capa media -->
-            <g fill="url(#gPet2)">
-              <g transform="rotate(30) scale(.70)"><path class="petalo" style="animation-delay:.35s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(90) scale(.70)"><path class="petalo" style="animation-delay:.40s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(150) scale(.70)"><path class="petalo" style="animation-delay:.45s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(210) scale(.70)"><path class="petalo" style="animation-delay:.50s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(270) scale(.70)"><path class="petalo" style="animation-delay:.55s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(330) scale(.70)"><path class="petalo" style="animation-delay:.60s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
+            <!-- Capa 2 -->
+            <g fill="url(#gP1)">
+              <g transform="rotate(26) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.23s"/></g>
+              <g transform="rotate(77) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.26s"/></g>
+              <g transform="rotate(129) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.29s"/></g>
+              <g transform="rotate(180) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.32s"/></g>
+              <g transform="rotate(231) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.35s"/></g>
+              <g transform="rotate(283) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.38s"/></g>
+              <g transform="rotate(334) scale(1.42,1.32)"><use href="#petal" class="petalo" style="animation-delay:0.41s"/></g>
             </g>
 
-            <!-- Capa interior -->
-            <g fill="url(#gPet3)">
-              <g transform="rotate(0) scale(.42)"><path class="petalo" style="animation-delay:.68s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(72) scale(.42)"><path class="petalo" style="animation-delay:.74s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(144) scale(.42)"><path class="petalo" style="animation-delay:.80s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(216) scale(.42)"><path class="petalo" style="animation-delay:.86s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
-              <g transform="rotate(288) scale(.42)"><path class="petalo" style="animation-delay:.92s" d="M0 0 C -32 -16 -40 -62 0 -90 C 40 -62 32 -16 0 0 Z"/></g>
+            <!-- Capa 3 -->
+            <g fill="url(#gP2)">
+              <g transform="rotate(0) scale(1.24,1.18)"><use href="#petal" class="petalo" style="animation-delay:0.47s"/></g>
+              <g transform="rotate(60) scale(1.24,1.18)"><use href="#petal" class="petalo" style="animation-delay:0.50s"/></g>
+              <g transform="rotate(120) scale(1.24,1.18)"><use href="#petal" class="petalo" style="animation-delay:0.53s"/></g>
+              <g transform="rotate(180) scale(1.24,1.18)"><use href="#petal" class="petalo" style="animation-delay:0.56s"/></g>
+              <g transform="rotate(240) scale(1.24,1.18)"><use href="#petal" class="petalo" style="animation-delay:0.59s"/></g>
+              <g transform="rotate(300) scale(1.24,1.18)"><use href="#petal" class="petalo" style="animation-delay:0.62s"/></g>
             </g>
 
-            <!-- Centro de la rosa -->
-            <circle class="nucleo" r="11" fill="#ff9dc0"/>
-            <circle class="nucleo" r="5" fill="#fff0f6" style="animation-delay:1.1s"/>
+            <!-- Capa 4 -->
+            <g fill="url(#gP2)">
+              <g transform="rotate(30) scale(1.08,1.04)"><use href="#petal" class="petalo" style="animation-delay:0.68s"/></g>
+              <g transform="rotate(90) scale(1.08,1.04)"><use href="#petal" class="petalo" style="animation-delay:0.71s"/></g>
+              <g transform="rotate(150) scale(1.08,1.04)"><use href="#petal" class="petalo" style="animation-delay:0.74s"/></g>
+              <g transform="rotate(210) scale(1.08,1.04)"><use href="#petal" class="petalo" style="animation-delay:0.77s"/></g>
+              <g transform="rotate(270) scale(1.08,1.04)"><use href="#petal" class="petalo" style="animation-delay:0.80s"/></g>
+              <g transform="rotate(330) scale(1.08,1.04)"><use href="#petal" class="petalo" style="animation-delay:0.83s"/></g>
+            </g>
+
+            <!-- Capa 5 -->
+            <g fill="url(#gP3)">
+              <g transform="rotate(0) scale(0.92,0.9)"><use href="#petal" class="petalo" style="animation-delay:0.88s"/></g>
+              <g transform="rotate(72) scale(0.92,0.9)"><use href="#petal" class="petalo" style="animation-delay:0.91s"/></g>
+              <g transform="rotate(144) scale(0.92,0.9)"><use href="#petal" class="petalo" style="animation-delay:0.94s"/></g>
+              <g transform="rotate(216) scale(0.92,0.9)"><use href="#petal" class="petalo" style="animation-delay:0.97s"/></g>
+              <g transform="rotate(288) scale(0.92,0.9)"><use href="#petal" class="petalo" style="animation-delay:1.00s"/></g>
+            </g>
+
+            <!-- Capa 6 -->
+            <g fill="url(#gP3)">
+              <g transform="rotate(36) scale(0.78,0.78)"><use href="#petal" class="petalo" style="animation-delay:1.05s"/></g>
+              <g transform="rotate(108) scale(0.78,0.78)"><use href="#petal" class="petalo" style="animation-delay:1.08s"/></g>
+              <g transform="rotate(180) scale(0.78,0.78)"><use href="#petal" class="petalo" style="animation-delay:1.11s"/></g>
+              <g transform="rotate(252) scale(0.78,0.78)"><use href="#petal" class="petalo" style="animation-delay:1.14s"/></g>
+              <g transform="rotate(324) scale(0.78,0.78)"><use href="#petal" class="petalo" style="animation-delay:1.17s"/></g>
+            </g>
+
+            <!-- Capa 7 -->
+            <g fill="url(#gP4)">
+              <g transform="rotate(0) scale(0.64,0.66)"><use href="#petal" class="petalo" style="animation-delay:1.22s"/></g>
+              <g transform="rotate(90) scale(0.64,0.66)"><use href="#petal" class="petalo" style="animation-delay:1.25s"/></g>
+              <g transform="rotate(180) scale(0.64,0.66)"><use href="#petal" class="petalo" style="animation-delay:1.28s"/></g>
+              <g transform="rotate(270) scale(0.64,0.66)"><use href="#petal" class="petalo" style="animation-delay:1.31s"/></g>
+            </g>
+
+            <!-- Capa 8 -->
+            <g fill="url(#gP4)">
+              <g transform="rotate(45) scale(0.5,0.54)"><use href="#petal" class="petalo" style="animation-delay:1.36s"/></g>
+              <g transform="rotate(135) scale(0.5,0.54)"><use href="#petal" class="petalo" style="animation-delay:1.39s"/></g>
+              <g transform="rotate(225) scale(0.5,0.54)"><use href="#petal" class="petalo" style="animation-delay:1.42s"/></g>
+              <g transform="rotate(315) scale(0.5,0.54)"><use href="#petal" class="petalo" style="animation-delay:1.45s"/></g>
+            </g>
+
+            <!-- Capa 9: centro -->
+            <g fill="url(#gP5)">
+              <g transform="rotate(0) scale(0.36,0.42)"><use href="#petal" class="petalo" style="animation-delay:1.50s"/></g>
+              <g transform="rotate(120) scale(0.36,0.42)"><use href="#petal" class="petalo" style="animation-delay:1.53s"/></g>
+              <g transform="rotate(240) scale(0.36,0.42)"><use href="#petal" class="petalo" style="animation-delay:1.56s"/></g>
+            </g>
+
+            <!-- Núcleo brillante -->
+            <circle class="petalo" r="16" fill="url(#gCore)" style="animation-delay:1.65s; transform-origin: 50% 50%;"/>
+            <circle class="petalo" r="7" fill="#1a0005" opacity="0.9" style="animation-delay:1.75s; transform-origin: 50% 50%;"/>
+            <circle class="petalo" r="2.5" fill="#ffb0c8" opacity="0.7" style="animation-delay:1.8s; transform-origin: 50% 50%;"/>
 
           </g>
         </g>
       </svg>
 
-      <!-- El mensaje -->
       <div class="texto">
         <h2 class="aparece" style="--i:0">Para ti, mi Solecito ☀️</h2>
 
@@ -361,7 +364,7 @@
         </p>
 
         <p class="aparece" style="--i:2">
-          Y tú haces exactamente eso: llegas y todo se vuelve más cálido, más bonito,
+          Y tú haces exactamente eso, llegas y todo se vuelve más cálido, más bonito,
           más tuyo. Me gusta cómo ríes, cómo hablas, cómo te enojas y a los cinco minutos
           ya me estás buscando. Me gusta que seas tú, sin filtros y sin máscaras.
         </p>
@@ -376,14 +379,13 @@
           Eres mi persona favorita, mi lugar seguro, mi solecito de todos los días.
         </p>
 
-        <p class="firma aparece" style="--i:5">— Tuyo, siempre. 🌹</p>
+        <p class="firma aparece" style="--i:5">— JOSE LUIS. 🌹</p>
       </div>
 
     </div>
   </section>
 
 <script>
-  /* ---------- Corazones flotantes ---------- */
   const contenedor = document.getElementById('corazones');
   const emojis = ['💗', '💖', '💕', '🌹', '✨', '💞'];
 
@@ -402,7 +404,6 @@
   for (let i = 0; i < 10; i++) crearCorazon();
   setInterval(crearCorazon, 900);
 
-  /* ---------- Elementos ---------- */
   const btn = document.getElementById('btnComenzar');
   const intro = document.getElementById('intro');
   const principal = document.getElementById('principal');
@@ -410,10 +411,8 @@
   const musica = document.getElementById('musica');
   const btnMusica = document.getElementById('btnMusica');
 
-  /* ---------- Botón "Haz clic aquí" ---------- */
   btn.addEventListener('click', () => {
-    // 🎵 Arranca la música con el clic (los navegadores no dejan autoplay solo)
-    musica.volume = 0.5; // Volumen al 50% (0.0 a 1.0)
+    musica.volume = 0.5;
     musica.play().catch(err => console.log('No se pudo reproducir:', err));
 
     intro.classList.add('oculto');
@@ -424,7 +423,6 @@
     }, 450);
   });
 
-  /* ---------- Botón de silenciar/activar ---------- */
   btnMusica.addEventListener('click', () => {
     if (musica.paused) {
       musica.play();
